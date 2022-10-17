@@ -1,60 +1,58 @@
 <ion-header>
-  <ion-toolbar color="tertiary">
-    <ion-buttons slot="start" >
+  <ion-toolbar  color="danger">
+    <ion-buttons slot="start">
       <ion-back-button
           defaultHref="/movies">
       </ion-back-button>
     </ion-buttons>
-    <ion-title  class="movieTitle" >{{movie?.title}} </ion-title>
+    <ion-title class="movieTitle" >{{movie?.title}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="movie">
+<ion-content color="dark" *ngIf="movie">
   
     <img class="imageUrl" [src]="imageBaseUrl +'/w400'+ movie?.poster_path">
-   
-    <ion-item lines ="none">
-      <ion-title >{{movie.title}}</ion-title>
-    </ion-item>
-
-    <ion-item lines ="none">
+  
+    <ion-item  color="dark" lines ="none">
       <ion-text slot="start">{{movie.tagline}}</ion-text>
     </ion-item>
 
-    <ion-item lines ="none">
+    <ion-item  color="dark" lines ="none">
       <ion-text color="primary">
         <span *ngFor="let g of movie.genres; let nameGenre = last">
          {{g.name}} {{!nameGenre ? ' . ' : ''}}</span>
       </ion-text>
     </ion-item>
 
-    <ion-item lines ="none">
-      <ion-text class="movieOverview" color="medium">  {{movie.overview}}</ion-text>
+    <ion-item  color="dark" lines ="none">
+      <ion-text class="movieOverview" color="medium">Film summary :  {{movie.overview}}</ion-text>
     </ion-item>
        
-    <ion-item lines ="none">
+    <ion-item  color="dark" lines ="none">
       <ion-icon name="flag" slot="start" ></ion-icon>
-      <ion-label>original language : {{movie.original_language}}</ion-label>
+      <ion-label>Original language : {{movie.original_language | uppercase}}</ion-label>
     </ion-item>
 
-    <ion-item lines ="none">
+    <ion-item color="dark" lines ="none">
       <ion-icon name="calendar-outline" slot="start" ></ion-icon>
-      <ion-label>release date : {{movie.release_date | date: 'YYYY-MM-dd'}}</ion-label>
+      <ion-label>Release date : {{movie.release_date | date: 'YYYY-MM-dd'}}</ion-label>
     </ion-item>
        
-    <ion-item lines ="none" >
+    <ion-item  color="dark" lines ="none" >
       <ion-icon name="cash-outline" slot="start" ></ion-icon>
-      <ion-label>movie budget : {{movie.budget | currency: 'EUR'}}</ion-label>
+      <ion-label>Movie budget : {{movie.budget | currency: 'EUR'}}</ion-label>
     </ion-item>
 
-    <ion-item lines ="none">
+    <ion-item  color="dark" lines ="none">
       <ion-icon name="cash-outline" slot="start" ></ion-icon>
-      <ion-label>movie revenue : {{ movie.revenue | currency: 'EUR' }}</ion-label>
+      <ion-label>Movie revenue : {{ movie.revenue | currency: 'EUR' }}</ion-label>
     </ion-item>          
+
 
 </ion-content>
 
 
-<ion-footer>
-  <ion-button expand="full" (click)="openHomepage()">Open Homepage</ion-button>
+<ion-footer >
+  <ion-button class="homepageButton" color="danger" (click)="openHomepage()">Open Homepage</ion-button>
+
 </ion-footer>

@@ -1,12 +1,15 @@
-<ion-header>
-  <ion-toolbar color="tertiary">
-    <ion-title>Trending movies</ion-title>
-  </ion-toolbar>
-</ion-header>
+ 
 
-<ion-content>
-  <ion-list>
-    <ion-item button *ngFor="let movie of movies" [routerLink] = "[movie.id]">
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title >Trending movies</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content  color="dark">
+  <ion-list  color="dark">
+    <ion-item color="dark" button *ngFor="let movie of movies" [routerLink] = "[movie.id]">
       <ion-avatar slot="start">
         <img [src]="imageBaseUrl +'/w92'+ movie.poster_path ">
       </ion-avatar>
@@ -15,7 +18,7 @@
           {{movie.release_date |date:'y'}}
         </p>
       </ion-label>
-      <ion-badge slot="end">{{movie.vote_average}}</ion-badge>
+      <ion-badge color="tertiary" slot="end">{{movie.vote_average}}</ion-badge>
     </ion-item>
   </ion-list>
 
