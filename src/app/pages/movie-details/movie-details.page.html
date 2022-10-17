@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar  color="danger">
+  <ion-toolbar color="danger">
     <ion-buttons slot="start">
       <ion-back-button
           defaultHref="/movies">
@@ -23,6 +23,8 @@
          {{g.name}} {{!nameGenre ? ' . ' : ''}}</span>
       </ion-text>
     </ion-item>
+
+ 
 
     <ion-item  color="dark" lines ="none">
       <ion-text class="movieOverview" color="medium">Film summary :  {{movie.overview}}</ion-text>
@@ -52,7 +54,6 @@
 </ion-content>
 
 
-<ion-footer >
+<ion-footer color="dark" >
   <ion-button class="homepageButton" color="danger" (click)="openHomepage()">Open Homepage</ion-button>
-
 </ion-footer>

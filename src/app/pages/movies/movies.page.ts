@@ -12,6 +12,7 @@ export class MoviesPage implements OnInit {
   movies = [];
   currentPage = 1; 
   imageBaseUrl = environment.images;
+  searchTerm : string;
 
   constructor(private movieService: MovieService, private loadingctrl: LoadingController) { }
 
@@ -34,10 +35,13 @@ export class MoviesPage implements OnInit {
       this.movies.push(...res.results);
       console.log(res);
 
+     
       event?.target.complete();
       if (event) {
         event.target.disabled = res.total_pages === this.currentPage;
       }
+
+     
     });
   }
 
@@ -47,3 +51,4 @@ export class MoviesPage implements OnInit {
   }
 
 }
+
