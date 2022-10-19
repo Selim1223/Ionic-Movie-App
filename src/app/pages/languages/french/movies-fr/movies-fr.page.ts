@@ -4,9 +4,9 @@ import { MovieService } from 'src/app/services/movie.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-movies',
-  templateUrl: './movies.page.html',
-  styleUrls: ['./movies.page.scss'],
+  selector: 'app-movies-fr',
+  templateUrl: './movies-fr.page.html',
+  styleUrls: ['./movies-fr.page.scss'],
 })
 export class MoviesPage implements OnInit {
   movies = [];
@@ -22,18 +22,19 @@ export class MoviesPage implements OnInit {
 
   async loadMovies(event?){
     const loading = await this.loadingctrl.create({
-      message: 'Loading..',
+      message: 'Chargement en cours..',
       spinner: 'bubbles',
     });
 
     await loading.present();
 
 
-    this.movieService.getTopRatedMovies(this.currentPage).subscribe((res)=>{
+    this.movieService.getTopRatedMoviesFr(this.currentPage).subscribe((res)=>{
       loading.dismiss();
      // this.movies = [...this.movies,...res.results ]
       this.movies.push(...res.results);
       console.log(res);
+      console.log(res.results);
 
      
       event?.target.complete();

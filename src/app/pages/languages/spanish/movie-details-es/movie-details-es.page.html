@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button
+          defaultHref="/movies">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="movieTitle" >{{movie?.title}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" *ngIf="movie">
+  
+    <img class="imageUrl" [src]="imageBaseUrl +'/w400'+ movie?.poster_path">
+  
+    <ion-item  color="dark" lines ="none">
+      <ion-text  class="details" slot="start">{{movie.tagline}}</ion-text>
+    </ion-item>
+
+    <ion-item  color="dark" lines ="none">
+      <ion-rating-stars [rating]="[movie.vote_average/2]" [color]="'darkgrey'" [filledColor]="'orange'" [margin]="2" [size]="20" [disabled]="false">
+      </ion-rating-stars>
+      <ion-label class="nbVotes" color="medium">de  {{movie.vote_count}} votos</ion-label>
+    </ion-item>
+
+    <ion-item  color="dark" lines ="none">
+      <ion-text  class="details" color="primary">
+        <span *ngFor="let g of movie.genres; let nameGenre = last">
+         {{g.name}} {{!nameGenre ? ' . ' : ''}}</span>
+      </ion-text>
+    </ion-item>
+
+    <ion-item  color="dark" lines ="none">
+      <ion-text class="movieOverview" color="medium">Sinopsis :  {{movie.overview}}</ion-text>
+    </ion-item>
+
+    <ion-item  color="dark" lines ="none">
+      <ion-icon name="time" slot="start" ></ion-icon>
+      <ion-label class="details">Duración : {{movie.runtime}} min</ion-label>
+    </ion-item>
+    
+    <ion-item  color="dark" lines ="none">
+      <ion-icon name="videocam" slot="start" ></ion-icon>
+      <ion-label class="details">Estatus : {{movie.status}}</ion-label>
+    </ion-item>
+       
+    <ion-item  color="dark" lines ="none">
+      <ion-icon name="flag" slot="start" ></ion-icon>
+      <ion-label class="details">Idioma original : {{movie.original_language | uppercase}}</ion-label>
+    </ion-item>
+
+    <ion-item color="dark" lines ="none">
+      <ion-icon name="calendar" slot="start" ></ion-icon>
+      <ion-label class="details">Fecha de publicación : {{movie.release_date | date: 'YYYY-MM-dd'}}</ion-label>
+    </ion-item>
+       
+    <ion-item  color="dark" lines ="none" >
+      <ion-icon name="cash-outline" slot="start" ></ion-icon>
+      <ion-label class="details">Presupuesto de la película : {{movie.budget | currency: 'EUR'}}</ion-label>
+    </ion-item>
+
+    <ion-item  color="dark" lines ="none">
+      <ion-icon name="cash" slot="start" ></ion-icon>
+      <ion-label class="details">Ingresos de la película : {{ movie.revenue | currency: 'EUR' }}</ion-label>
+    </ion-item>          
+</ion-content>
+
+
+<ion-footer color="dark" >
+  <ion-button class="homepageButton" color="danger" (click)="openHomepage()">Ir al sitio web de la película</ion-button>
+</ion-footer>

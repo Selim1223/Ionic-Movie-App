@@ -1,0 +1,52 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>Sprachen </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content color="dark" class="ion-padding">
+      <ion-list>
+        <ion-button expand="block" color="medium" href = "/movies" value="English | lowercase">Englisch</ion-button><br>
+        <ion-button expand="block" color="medium" href = "/movies-fr" value="French">Französisch</ion-button><br>
+        <ion-button expand="block" color="medium" href = "/movies-de" value="German">Deutsch</ion-button><br>
+        <ion-button expand="block" color="medium" href = "/movies-es" value="Spanish">Spanisch</ion-button>
+      </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<div class="ion-page" id="main-content">
+  <ion-header line="none">
+    <ion-toolbar color="danger">
+      <ion-item color="danger"> 
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons> 
+          <ion-title>Aktuelle Filme</ion-title>
+      </ion-item>
+      <ion-searchbar line="none" placeholder="Suche" color="danger" [(ngModel)]="searchTerm" show-clear-button="always" clear-icon="trash-bin" ></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content color="dark">
+    <ion-list color="dark">
+      <ion-item color="dark" button *ngFor="let movie of movies | filter:searchTerm" [routerLink] = "[movie.id]">
+        <ion-avatar slot="start">
+          <img [src]="imageBaseUrl +'/w92'+ movie.poster_path ">
+        </ion-avatar>
+        <ion-label>{{movie.title}}
+          <p>
+            {{movie.release_date |date:'y'}}
+          </p>
+        </ion-label>
+        <ion-badge color="tertiary" slot="end">{{movie.vote_average}}</ion-badge>
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite) = "loadMore($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </ion-content>
+</div>

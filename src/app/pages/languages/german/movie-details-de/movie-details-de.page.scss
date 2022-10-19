@@ -1,0 +1,36 @@
+ion-button.homepageButton{
+    display: block;
+    --border-radius: 15px;
+}
+
+ion-select{
+    display: block;
+}
+ion-title.movieTitle{
+    font-size: larger;
+}
+
+ion-label.nbVotes{
+    margin-left: 5px;
+    font-size: small;
+}
+
+ion-text.movieOverview{
+    font-size: larger;
+}
+
+ion-text.details{
+    font-size: large;
+}
+
+ion-label.details{
+    font-size: large;
+}
+
+ion-footer{
+    background-color: #d20521;
+}
+
+ion-button {
+    text-transform: none;
+}

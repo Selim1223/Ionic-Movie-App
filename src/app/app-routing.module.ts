@@ -9,11 +9,35 @@ const routes: Routes = [
   },
   {
     path: 'movies',
-    loadChildren: () => import('./pages/movies/movies.module').then( m => m.MoviesPageModule)
+    loadChildren: () => import('./pages/languages/english/movies/movies.module').then( m => m.MoviesPageModule)
   },
   {
     path: 'movies/:id',
-    loadChildren: () => import('./pages/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
+    loadChildren: () => import('./pages/languages/english/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'movies-fr',
+    loadChildren: () => import('./pages/languages/french/movies-fr/movies-fr.module').then( m => m.MoviesPageModule)
+  },
+  {
+    path: 'movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'movies-de',
+    loadChildren: () => import('./pages/languages/german/movies-de/movies-de.module').then( m => m.MoviesPageModule)
+  },
+  {
+    path: 'movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'movies-es',
+    loadChildren: () => import('./pages/languages/spanish/movies-es/movies-es.module').then( m => m.MoviesPageModule)
+  },
+  {
+    path: 'movies-es/:id',
+    loadChildren: () => import('./pages/languages/spanish/movie-details-es/movie-details-es.module').then( m => m.MovieDetailsPageModule)
   },
 ];
 
