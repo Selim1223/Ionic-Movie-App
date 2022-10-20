@@ -10,6 +10,8 @@ import { MovieDetailsPage } from './movie-details-fr.page';
 
 import { IonRatingStarsModule } from 'ion-rating-stars';
 
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +20,7 @@ import { IonRatingStarsModule } from 'ion-rating-stars';
     MovieDetailsPageRoutingModule,
     IonRatingStarsModule
   ],
+  providers:[YoutubeVideoPlayer ],
   declarations: [MovieDetailsPage]
 })
 export class MovieDetailsPageModule {}

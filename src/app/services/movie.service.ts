@@ -27,6 +27,13 @@ export class MovieService {
     );
   }
 
+  getMovieTrailer(id: string): Observable<ApiResult> {
+    return this.http.get<ApiResult>(
+      `${environment.baseURL}/movie/${id}/videos?api_key=${environment.apiKey}` 
+    );
+  }
+
+
   getPopularMoviesFr(page = 1): Observable<ApiResult> {
     return this.http.get<ApiResult>(`${environment.baseURL}/movie/popular?api_key=${environment.apiKey}&page=${page}&language=fr`); 
   }
@@ -34,6 +41,12 @@ export class MovieService {
   getMovieDetailsFr(id: string) {
     return this.http.get(
       `${environment.baseURL}/movie/${id}?api_key=${environment.apiKey}&language=fr` 
+    );
+  }
+
+  getMovieTrailerFr(id: string): Observable<ApiResult> {
+    return this.http.get<ApiResult>(
+      `${environment.baseURL}/movie/${id}/videos?api_key=${environment.apiKey}&language=fr` 
     );
   }
 

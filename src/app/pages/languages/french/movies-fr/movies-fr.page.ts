@@ -20,6 +20,9 @@ export class MoviesPage implements OnInit {
    this.loadMovies();
   }
 
+
+
+
   async loadMovies(event?){
     const loading = await this.loadingctrl.create({
       message: 'Chargement en cours..',

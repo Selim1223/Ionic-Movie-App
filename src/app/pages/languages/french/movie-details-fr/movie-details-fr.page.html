@@ -11,7 +11,11 @@
 
 <ion-content color="dark" *ngIf="movie">
   
-    <img class="imageUrl" [src]="imageBaseUrl +'/w400'+ movie?.poster_path">
+
+  <img class="imageUrl" [src]="imageBaseUrl +'/w400'+ movie?.poster_path">
+  <ion-item color="dark" lines ="none">
+    <ion-button color="danger" (click)="invokeVideoPlayer()">Video Trailer</ion-button>
+  </ion-item>
   
     <ion-item  color="dark" lines ="none">
       <ion-text  class="details" slot="start">{{movie.tagline}}</ion-text>
