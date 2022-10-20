@@ -29,7 +29,7 @@ export class MoviesPage implements OnInit {
     await loading.present();
 
 
-    this.movieService.getTopRatedMoviesFr(this.currentPage).subscribe((res)=>{
+    this.movieService.getPopularMoviesFr(this.currentPage).subscribe((res)=>{
       loading.dismiss();
      // this.movies = [...this.movies,...res.results ]
       this.movies.push(...res.results);

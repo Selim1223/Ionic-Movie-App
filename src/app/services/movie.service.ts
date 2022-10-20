@@ -17,7 +17,7 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getTopRatedMovies(page = 1): Observable<ApiResult> {
+  getPopularMovies(page = 1): Observable<ApiResult> {
     return this.http.get<ApiResult>(`${environment.baseURL}/movie/popular?api_key=${environment.apiKey}&page=${page}`); //&language=fr
   }
  
@@ -27,7 +27,7 @@ export class MovieService {
     );
   }
 
-  getTopRatedMoviesFr(page = 1): Observable<ApiResult> {
+  getPopularMoviesFr(page = 1): Observable<ApiResult> {
     return this.http.get<ApiResult>(`${environment.baseURL}/movie/popular?api_key=${environment.apiKey}&page=${page}&language=fr`); 
   }
  
@@ -37,7 +37,7 @@ export class MovieService {
     );
   }
 
-  getTopRatedMoviesDe(page = 1): Observable<ApiResult> {
+  getPopularMoviesDe(page = 1): Observable<ApiResult> {
     return this.http.get<ApiResult>(`${environment.baseURL}/movie/popular?api_key=${environment.apiKey}&page=${page}&language=de`); 
   }
  
@@ -47,7 +47,7 @@ export class MovieService {
     );
   }
 
-  getTopRatedMoviesEs(page = 1): Observable<ApiResult> {
+  getPopularMoviesEs(page = 1): Observable<ApiResult> {
     return this.http.get<ApiResult>(`${environment.baseURL}/movie/popular?api_key=${environment.apiKey}&page=${page}&language=es`); 
   }
  

@@ -29,12 +29,12 @@ export class MoviesPage implements OnInit {
     await loading.present();
 
 
-    this.movieService.getTopRatedMoviesEs(this.currentPage).subscribe((res)=>{
+    this.movieService.getPopularMoviesEs(this.currentPage).subscribe((res)=>{
       loading.dismiss();
      // this.movies = [...this.movies,...res.results ]
       this.movies.push(...res.results);
       console.log(res);
-      console.log(res.results);
+      console.log(res.results[0]);
 
      
       event?.target.complete();
