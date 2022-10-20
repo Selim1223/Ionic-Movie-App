@@ -11,6 +11,7 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 })
 export class MovieDetailsPage implements OnInit {
   movie = null;
+  credit = null;
   imageBaseUrl = environment.images;
 
   constructor(private route: ActivatedRoute, private movieService: MovieService,private youtubeVideoPlayer: YoutubeVideoPlayer) { }
@@ -19,9 +20,11 @@ export class MovieDetailsPage implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.movieService.getMovieDetailsFr(id).subscribe(res =>{
-        console.log(res);
+        console.log("coucou", res);
         this.movie = res;
     });
+
+    this.ShowMovieCredits();    
     this.invokeVideoPlayer();
   }
 
@@ -48,5 +51,14 @@ export class MovieDetailsPage implements OnInit {
         console.log(res.results[0]['key']);
     });
   }
+  }  
+
+  ShowMovieCredits(){
+    const id = this.route.snapshot.paramMap.get('id');
+
+      this.movieService.getMovieCredit(id).subscribe(res =>{
+        this.credit = res;
+        console.log("salut",res);
+    });
   }  
 }
