@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark" *ngIf="movie">
+<ion-content color="dark" *ngIf="movie && credit">
   
     <img class="imageUrl" [src]="imageBaseUrl +'/w400'+ movie?.poster_path">
   
@@ -30,21 +30,21 @@
       </ion-text>
     </ion-item>
 
-    <ion-item  color="dark" lines ="none">
+    <ion-item color="dark" lines ="none">
       <ion-text class="movieOverview" color="medium">Synopsis :  {{movie.overview}}</ion-text>
     </ion-item>
 
-    <ion-item  color="dark" lines ="none">
+    <ion-item color="dark" lines ="none">
       <ion-icon name="time" slot="start" ></ion-icon>
       <ion-label class="details">Duration : {{movie.runtime}} min</ion-label>
     </ion-item>
     
-    <ion-item  color="dark" lines ="none">
+    <ion-item color="dark" lines ="none">
       <ion-icon name="videocam" slot="start" ></ion-icon>
       <ion-label class="details">Statut : {{movie.status}}</ion-label>
     </ion-item>
        
-    <ion-item  color="dark" lines ="none">
+    <ion-item color="dark" lines ="none">
       <ion-icon name="flag" slot="start" ></ion-icon>
       <ion-label class="details">Original language : {{movie.original_language | uppercase}}</ion-label>
     </ion-item>
@@ -54,17 +54,17 @@
       <ion-label class="details">Release date : {{movie.release_date | date: 'YYYY-MM-dd'}}</ion-label>
     </ion-item>
        
-    <ion-item  color="dark" lines ="none" >
+    <ion-item color="dark" lines ="none" >
       <ion-icon name="cash-outline" slot="start" ></ion-icon>
       <ion-label class="details">Movie budget : {{movie.budget | currency: 'EUR'}}</ion-label>
     </ion-item>
 
-    <ion-item  color="dark" lines ="none">
+    <ion-item color="dark" lines ="none">
       <ion-icon name="cash" slot="start" ></ion-icon>
       <ion-label class="details">Movie revenue : {{ movie.revenue | currency: 'EUR' }}</ion-label>
     </ion-item>   
     
-    <ion-item *ngIf="credit" color="dark" lines ="none">
+    <ion-item color="dark" lines ="none">
       <ion-text class="details">Main actors : {{ credit.cast[0]['name'] }}, {{ credit.cast[1]['name'] }},
          {{ credit.cast[2]['name'] }}, {{ credit.cast[3]['name'] }}, {{ credit.cast[5]['name'] }}</ion-text>
     </ion-item>      
