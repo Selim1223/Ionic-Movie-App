@@ -62,7 +62,14 @@
     <ion-item  color="dark" lines ="none">
       <ion-icon name="cash" slot="start" ></ion-icon>
       <ion-label class="details">Filmeinnahmen : {{ movie.revenue | currency: 'EUR' }}</ion-label>
-    </ion-item>          
+    </ion-item>   
+    
+    <ion-item *ngIf="credit" color="dark" lines ="none">
+      <ion-text class="details">
+        Hauptdarsteller : {{ credit.cast[0]['name'] }}, {{ credit.cast[1]['name'] }},
+         {{ credit.cast[2]['name'] }}, {{ credit.cast[3]['name'] }}, {{ credit.cast[5]['name'] }}</ion-text>
+    </ion-item>      
+
 </ion-content>
 
 

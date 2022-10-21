@@ -56,12 +56,6 @@ export class MovieService {
     );
   }
 
-  getMovieCreditFr(id: string): Observable<ApiResult> {
-    return this.http.get<ApiResult>(
-      `${environment.baseURL}/movie/${id}/credits?api_key=${environment.apiKey}&language=fr` 
-    );
-  }
-
   getPopularMoviesDe(page = 1): Observable<ApiResult> {
     return this.http.get<ApiResult>(`${environment.baseURL}/movie/popular?api_key=${environment.apiKey}&page=${page}&language=de`); 
   }

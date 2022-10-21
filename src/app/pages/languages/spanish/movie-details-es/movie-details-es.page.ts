@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MovieDetailsPage implements OnInit {
   movie = null;
+  credit = null;
   imageBaseUrl = environment.images;
 
   constructor(private route: ActivatedRoute, private movieService: MovieService) { }
@@ -20,6 +21,8 @@ export class MovieDetailsPage implements OnInit {
         console.log(res);
         this.movie = res;
     });
+
+    this.ShowMovieCredits();    
   }
 
   
@@ -27,4 +30,12 @@ export class MovieDetailsPage implements OnInit {
     window.open(this.movie.homepage);
   }
 
+  ShowMovieCredits(){
+    const id = this.route.snapshot.paramMap.get('id');
+
+      this.movieService.getMovieCredit(id).subscribe(res =>{
+        this.credit = res;
+        console.log("salut",res);
+    });
+  } 
 }
