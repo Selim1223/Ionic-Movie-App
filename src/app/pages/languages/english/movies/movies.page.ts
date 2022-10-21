@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
-import { MovieService } from 'src/app/services/movie.service';
+import { MovieService } from 'src/app/services/movie/movie.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MoviesPage implements OnInit {
   movies = [];
+  genres = null;
   currentPage = 1; 
   imageBaseUrl = environment.images;
   searchTerm : string;
@@ -18,6 +19,8 @@ export class MoviesPage implements OnInit {
 
   ngOnInit() {
    this.loadMovies();
+   this.ShowGenreMovies();
+   this.ShowListMovieByGenre();
   }
 
   async loadMovies(event?){
@@ -28,27 +31,35 @@ export class MoviesPage implements OnInit {
 
     await loading.present();
 
-
     this.movieService.getPopularMovies(this.currentPage).subscribe((res)=>{
       loading.dismiss();
      // this.movies = [...this.movies,...res.results ]
       this.movies.push(...res.results);
+      //console.log(res['genres'][0]);
       console.log(res);
-      console.log(res.results);
 
-     
       event?.target.complete();
       if (event) {
         event.target.disabled = res.total_pages === this.currentPage;
-      }
-
-     
+      }  
     });
   }
-
   loadMore(event: InfiniteScrollCustomEvent) {
     this.currentPage++;
     this.loadMovies(event);
+  }
+
+  ShowGenreMovies(){
+      this.movieService.getGenreMovies().subscribe(res =>{
+        this.genres = res['genres'];
+        console.log("liste genre",res['genres']);
+    });
+  }
+
+  ShowListMovieByGenre(){
+    this.movieService.getMovieByGenre().subscribe(res =>{
+      console.log("liste movie by genre",...res.results);
+  });
   }
 
 }

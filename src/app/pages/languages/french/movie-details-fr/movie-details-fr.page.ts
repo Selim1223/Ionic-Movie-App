@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MovieService } from 'src/app/services/movie.service';
+import { MovieService } from 'src/app/services/movie/movie.service';
 import { environment } from 'src/environments/environment';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 

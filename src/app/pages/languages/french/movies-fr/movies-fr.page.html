@@ -22,6 +22,17 @@
           <ion-menu-button></ion-menu-button>
         </ion-buttons> 
           <ion-title>Films populaires</ion-title>
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="danger">
+                <ion-label>Langues</ion-label>
+              </ion-item>
+                <ion-item slot="content" color="danger" href = "/movies" value="English">Anglais</ion-item> 
+                <ion-item slot="content" color="danger" href = "/movies-fr" value="French">Français</ion-item>       
+                <ion-item slot="content" color="danger" href = "/movies-de" value="German">Allemand</ion-item>
+                <ion-item slot="content" color="danger" href = "/movies-es" value="Spanish">Espagnol</ion-item>
+            </ion-accordion>
+          </ion-accordion-group>
       </ion-item>
       <ion-searchbar line="none" placeholder="Recherche" color="danger" [(ngModel)]="searchTerm" show-clear-button="always" clear-icon="trash-bin" ></ion-searchbar>
     </ion-toolbar>

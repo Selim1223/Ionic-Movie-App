@@ -18,7 +18,19 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   getPopularMovies(page = 1): Observable<ApiResult> {
-    return this.http.get<ApiResult>(`${environment.baseURL}/movie/popular?api_key=${environment.apiKey}&page=${page}`); //&language=fr
+    return this.http.get<ApiResult>(`${environment.baseURL}/movie/popular?api_key=${environment.apiKey}&page=${page}`); 
+    //&language=fr 
+    //top_rated //upcoming //now_playing 
+  }
+
+  getMovieByGenre(): Observable<ApiResult> {
+    return this.http.get<ApiResult>(
+      `${environment.baseURL}/discover/movie?api_key=${environment.apiKey}&with_genres=27` 
+    );
+  }
+
+  getGenreMovies(): Observable<ApiResult> {
+    return this.http.get<ApiResult>(`${environment.baseURL}/genre/movie/list?api_key=${environment.apiKey}`); 
   }
  
   getMovieDetails(id: string) {
@@ -73,13 +85,6 @@ export class MovieService {
   getMovieDetailsEs(id: string) {
     return this.http.get(
       `${environment.baseURL}/movie/${id}?api_key=${environment.apiKey}&language=es` 
-    );
-  }
-
-
-  getGenreMovies(): Observable<ApiResult>{
-    return this.http.get<ApiResult>(
-      `${environment.baseURL}/genre/movie/list?api_key=${environment.apiKey}` //&language=fr
     );
   }
 

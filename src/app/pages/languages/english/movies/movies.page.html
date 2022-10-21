@@ -1,16 +1,16 @@
 <ion-menu contentId="main-content">
   <ion-header>
     <ion-toolbar color="danger">
-      <ion-title>Languages </ion-title>
+      <ion-title>Genres</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content color="dark" class="ion-padding">
-      <ion-list>
-        <ion-button expand="block" color="medium" href = "/movies" value="English | lowercase">English</ion-button><br>
-        <ion-button expand="block" color="medium" href = "/movies-fr" value="French">French</ion-button><br>
-        <ion-button expand="block" color="medium" href = "/movies-de" value="German">German</ion-button><br>
-        <ion-button expand="block" color="medium" href = "/movies-es" value="Spanish">Spanish</ion-button>
-      </ion-list>
+  <ion-content color="dark" class="ion-padding" *ngIf="genres">
+    <ion-list>
+      <ion-button expand="block" color="medium" href = "" value="English">{{genres[0]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="French">{{genres[1]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="German">{{genres[2]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Spanish">{{genres[3]['name']}}</ion-button>
+    </ion-list>
   </ion-content>
 </ion-menu>
 
@@ -23,6 +23,17 @@
           <ion-menu-button></ion-menu-button>
         </ion-buttons> 
           <ion-title>Popular movies</ion-title>
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="danger">
+                <ion-label>Languages</ion-label>
+              </ion-item>
+                <ion-item slot="content" color="danger" href = "/movies" value="English">English</ion-item> 
+                <ion-item slot="content" color="danger" href = "/movies-fr" value="French">French</ion-item>       
+                <ion-item slot="content" color="danger" href = "/movies-de" value="German">German</ion-item>
+                <ion-item slot="content" color="danger" href = "/movies-es" value="Spanish">Spanish</ion-item>
+            </ion-accordion>
+          </ion-accordion-group>
       </ion-item>
       <ion-searchbar line="none" placeholder="Search" color="danger" [(ngModel)]="searchTerm" show-clear-button="always" clear-icon="trash-bin" ></ion-searchbar>
     </ion-toolbar>
