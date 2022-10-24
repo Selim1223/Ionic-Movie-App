@@ -50,16 +50,16 @@ export class MoviesPage implements OnInit {
   }
 
   ShowGenreMovies(){
-      this.movieService.getGenreMovies().subscribe(res =>{
+      this.movieService.getListGenreMovies().subscribe(res =>{
         this.genres = res['genres'];
         console.log("liste genre",res['genres']);
     });
   }
 
   ShowListMovieByGenre(){
-    this.movieService.getMovieByGenre().subscribe(res =>{
-      console.log("liste movie by genre",...res.results);
-  });
+      this.movieService.getMovieByGenre().subscribe(res =>{
+        console.log("liste movie by genre",...res.results);
+    });
   }
 
 }

@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MoviesPage implements OnInit {
   movies = [];
+  genres = null;
   currentPage = 1; 
   imageBaseUrl = environment.images;
   searchTerm : string;
@@ -18,6 +19,7 @@ export class MoviesPage implements OnInit {
 
   ngOnInit() {
    this.loadMovies();
+   this.ShowGenreMovies();
   }
 
   async loadMovies(event?){
@@ -49,6 +51,13 @@ export class MoviesPage implements OnInit {
   loadMore(event: InfiniteScrollCustomEvent) {
     this.currentPage++;
     this.loadMovies(event);
+  }
+
+    ShowGenreMovies(){
+      this.movieService.getListGenreMoviesDe().subscribe(res =>{
+        this.genres = res['genres'];
+        console.log("liste genre",res['genres']);
+    });
   }
 
 }

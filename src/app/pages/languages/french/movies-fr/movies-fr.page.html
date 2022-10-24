@@ -1,16 +1,31 @@
 <ion-menu contentId="main-content">
   <ion-header>
     <ion-toolbar color="danger">
-      <ion-title>Langues </ion-title>
+      <ion-title>Genres</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content color="dark" class="ion-padding">
-      <ion-list>
-        <ion-button expand="block" color="medium" href = "/movies" value="English">Anglais</ion-button><br>
-        <ion-button expand="block" color="medium" href = "/movies-fr" value="French">Français</ion-button><br>
-        <ion-button expand="block" color="medium" href = "/movies-de" value="German">Allemand</ion-button><br>
-        <ion-button expand="block" color="medium" href = "/movies-es" value="Spanish">Espagnol</ion-button>
-      </ion-list>
+  <ion-content color="dark" class="ion-padding" *ngIf="genres">
+    <ion-list>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[0]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[1]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[2]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[3]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[4]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[5]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[6]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[7]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[8]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[9]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[10]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[11]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[12]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[13]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[14]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[15]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[16]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[17]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[18]['name']}}</ion-button><br>
+    </ion-list>
   </ion-content>
 </ion-menu>
   

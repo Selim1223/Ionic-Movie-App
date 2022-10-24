@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MovieService } from 'src/app/services/movie/movie.service';
+import { MovieDetailsService } from 'src/app/services/movie-details/movie-details.service';
 import { environment } from 'src/environments/environment';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 
@@ -14,12 +14,12 @@ export class MovieDetailsPage implements OnInit {
   credit = null;
   imageBaseUrl = environment.images;
 
-  constructor(private route: ActivatedRoute, private movieService: MovieService,private youtubeVideoPlayer: YoutubeVideoPlayer) { }
+  constructor(private route: ActivatedRoute, private movieDetailsService: MovieDetailsService,private youtubeVideoPlayer: YoutubeVideoPlayer) { }
 
   
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.movieService.getMovieDetailsFr(id).subscribe(res =>{
+    this.movieDetailsService.getMovieDetailsFr(id).subscribe(res =>{
         console.log("coucou", res);
         this.movie = res;
     });
@@ -35,8 +35,8 @@ export class MovieDetailsPage implements OnInit {
 
   invokeVideoPlayer(){
     const id = this.route.snapshot.paramMap.get('id');
-    if(this.movieService.getMovieTrailerFr(id).subscribe(undefined)){
-      this.movieService.getMovieTrailer(id).subscribe(res =>{
+    if(this.movieDetailsService.getMovieTrailerFr(id).subscribe(undefined)){
+      this.movieDetailsService.getMovieTrailer(id).subscribe(res =>{
         this.youtubeVideoPlayer.openVideo(res.results[0]['key']);
         console.log(res);
         console.log(res.results);
@@ -44,7 +44,7 @@ export class MovieDetailsPage implements OnInit {
     });
   }
   else{
-      this.movieService.getMovieTrailerFr(id).subscribe(res =>{
+      this.movieDetailsService.getMovieTrailerFr(id).subscribe(res =>{
         this.youtubeVideoPlayer.openVideo(res.results[0]['key']);
         console.log(res);
         console.log(res.results);
@@ -56,7 +56,7 @@ export class MovieDetailsPage implements OnInit {
   ShowMovieCredits(){
     const id = this.route.snapshot.paramMap.get('id');
 
-      this.movieService.getMovieCredit(id).subscribe(res =>{
+      this.movieDetailsService.getMovieCredit(id).subscribe(res =>{
         this.credit = res;
         console.log("salut",res);
     });
