@@ -37,16 +37,21 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons> 
-          <ion-title>Populäre filme</ion-title>
-          <ion-accordion-group>
+          <ion-title slot="start">Populäre filme</ion-title>
+          <ion-accordion-group slot="end">
             <ion-accordion value="first">
               <ion-item slot="header" color="danger">
-                <ion-label>Sprachen</ion-label>
+                <img src="https://flagcdn.com/de.svg" width="25" alt="Germany">
               </ion-item>
-                <ion-item slot="content" color="danger" href = "/movies" value="English">Englisch</ion-item> 
-                <ion-item slot="content" color="danger" href = "/movies-fr" value="French">Französisch</ion-item>       
-                <ion-item slot="content" color="danger" href = "/movies-de" value="German">Deutsch</ion-item>
-                <ion-item slot="content" color="danger" href = "/movies-es" value="Spanish">Spanisch</ion-item>
+                <ion-item slot="content" color="danger" href = "/movies" value="English">
+                  <img src="https://flagcdn.com/gb-eng.svg" width="25" alt="England">
+                </ion-item> 
+                <ion-item slot="content" color="danger" href = "/movies-fr" value="French">
+                  <img src="https://flagcdn.com/fr.svg" width="25" alt="France">
+                </ion-item>       
+                <ion-item slot="content" color="danger" href = "/movies-es" value="Spanish">
+                  <img src="https://flagcdn.com/es.svg" width="25" alt="Spain">
+                </ion-item>   
             </ion-accordion>
           </ion-accordion-group>
       </ion-item>
