@@ -4,20 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ActionMoviesPageRoutingModule } from './action-movies-routing.module';
+import { AdventureMoviesPageRoutingModule } from './adventure-movies-routing.module';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
-import { ActionMoviesPage } from './action-movies.page';
+import { AdventureMoviesPage } from './adventure-movies.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ActionMoviesPageRoutingModule,
+    AdventureMoviesPageRoutingModule,
     Ng2SearchPipeModule
   ],
-  declarations: [ActionMoviesPage]
+  declarations: [AdventureMoviesPage]
 })
-export class MoviesPageModule {}
+export class AdventureMoviesPageModule {}

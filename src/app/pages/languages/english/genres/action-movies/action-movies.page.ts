@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './action-movies.page.html',
   styleUrls: ['./action-movies.page.scss'],
 })
-export class MoviesPage implements OnInit {
+export class ActionMoviesPage implements OnInit {
   movies = [];
   genres = null;
   currentPage = 1; 

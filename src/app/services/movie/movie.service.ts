@@ -38,5 +38,10 @@ export class MovieService {
       `${environment.baseURL}/discover/movie?api_key=${environment.apiKey}&with_genres=${environment.action}&page=${page}` 
     );
   }
- 
+
+  getAdventureMovies(page = 1): Observable<ApiResult> {
+    return this.http.get<ApiResult>(
+      `${environment.baseURL}/discover/movie?api_key=${environment.apiKey}&with_genres=${environment.adventure}&page=${page}` 
+    );
+  }
 }

@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/languages/english/movies/movies.module').then( m => m.MoviesPageModule)
   },
   {
+    path: 'movies/:id',
+    loadChildren: () => import('./pages/languages/english/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
     path: 'action-movies',
     loadChildren: () => import('./pages/languages/english/genres/action-movies/action-movies.module').then( m => m.MoviesPageModule)
   },
@@ -20,7 +24,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/languages/english/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
   },
   {
-    path: 'movies/:id',
+    path: 'adventure-movies',
+    loadChildren: () => import('./pages/languages/english/genres/adventure-movies/adventure-movies.module').then( m => m.AdventureMoviesPageModule)
+  },
+  {
+    path: 'adventure-movies/:id',
     loadChildren: () => import('./pages/languages/english/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
   },
   {
@@ -47,6 +55,7 @@ const routes: Routes = [
     path: 'movies-es/:id',
     loadChildren: () => import('./pages/languages/spanish/movie-details-es/movie-details-es.module').then( m => m.MovieDetailsPageModule)
   },
+ 
 ];
 
 @NgModule({
