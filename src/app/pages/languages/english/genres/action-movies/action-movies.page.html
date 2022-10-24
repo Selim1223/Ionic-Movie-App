@@ -6,7 +6,7 @@
   </ion-header>
   <ion-content color="dark" class="ion-padding" *ngIf="genres">
     <ion-list>
-      <ion-button expand="block" color="medium" href = "action-movies" value="Genre">{{genres[0]['name']}}</ion-button><br>
+      <ion-button expand="block" color="medium" href = "movies" value="Homepage">Popular movies</ion-button><br>
       <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[1]['name']}}</ion-button><br>
       <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[2]['name']}}</ion-button><br>
       <ion-button expand="block" color="medium" href = "" value="Genre">{{genres[3]['name']}}</ion-button><br>
@@ -37,7 +37,7 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons> 
-        <ion-title class="home" slot="start">Popular movies</ion-title>
+        <ion-title class="home" slot="start">Action movies</ion-title>
           <ion-accordion-group slot="end">
             <ion-accordion value="first">
               <ion-item slot="header" color="danger">

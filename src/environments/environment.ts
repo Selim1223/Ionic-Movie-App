@@ -6,7 +6,25 @@ export const environment = {
   production: false,
   apiKey: "ad2d1e8f8f305ee4c13295d53414db21",
   baseURL: "https://api.themoviedb.org/3",
-  images: "http://image.tmdb.org/t/p" 
+  images: "http://image.tmdb.org/t/p",
+  action: "28",
+  adventure: "12",
+  animation: "16",
+  comedy: "35",
+  crime: "80",
+  documentary: "99",
+  drama: "18",
+  family: "10751",
+  fantasy: "14",
+  history: "36",
+  horror: "27",
+  music: "10402",
+  mystery: "9648",
+  romance: "10749",
+  SF: "878",
+  TVMovie: "10770",
+  war: "10752",
+  western: "37",
 };
 
 /*

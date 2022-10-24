@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
-import { MovieFrService } from 'src/app/services/movie-fr/movie-fr.service';
+import { MovieService } from 'src/app/services/movie/movie.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-movies-fr',
-  templateUrl: './movies-fr.page.html',
-  styleUrls: ['./movies-fr.page.scss'],
+  selector: 'app-movies',
+  templateUrl: './action-movies.page.html',
+  styleUrls: ['./action-movies.page.scss'],
 })
 export class MoviesPage implements OnInit {
   movies = [];
@@ -15,7 +15,7 @@ export class MoviesPage implements OnInit {
   imageBaseUrl = environment.images;
   searchTerm : string;
 
-  constructor(private movieFrService: MovieFrService, private loadingctrl: LoadingController) { }
+  constructor(private movieService: MovieService, private loadingctrl: LoadingController) { }
 
   ngOnInit() {
    this.loadMovies();
@@ -24,40 +24,36 @@ export class MoviesPage implements OnInit {
 
   async loadMovies(event?){
     const loading = await this.loadingctrl.create({
-      message: 'Chargement en cours..',
+      message: 'Loading..',
       spinner: 'bubbles',
     });
 
     await loading.present();
 
-
-    this.movieFrService.getPopularMoviesFr(this.currentPage).subscribe((res)=>{
+    this.movieService.getActionMovies(this.currentPage).subscribe((res)=>{
       loading.dismiss();
      // this.movies = [...this.movies,...res.results ]
       this.movies.push(...res.results);
+      //console.log(res['genres'][0]);
       console.log(res);
-      console.log(res.results);
 
-     
       event?.target.complete();
       if (event) {
         event.target.disabled = res.total_pages === this.currentPage;
-      }
-
-     
+      }  
     });
   }
-
   loadMore(event: InfiniteScrollCustomEvent) {
     this.currentPage++;
     this.loadMovies(event);
   }
 
   ShowGenreMovies(){
-      this.movieFrService.getListGenreMoviesFr().subscribe(res =>{
+      this.movieService.getListGenreMovies().subscribe(res =>{
         this.genres = res['genres'];
         console.log("liste genre",res['genres']);
     });
   }
+
 }
 

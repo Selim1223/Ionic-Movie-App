@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
-import { MovieService } from 'src/app/services/movie/movie.service';
+import { MovieEsService } from 'src/app/services/movie-es/movie-es.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -15,7 +15,7 @@ export class MoviesPage implements OnInit {
   imageBaseUrl = environment.images;
   searchTerm : string;
 
-  constructor(private movieService: MovieService, private loadingctrl: LoadingController) { }
+  constructor(private movieEsService: MovieEsService, private loadingctrl: LoadingController) { }
 
   ngOnInit() {
    this.loadMovies();
@@ -31,7 +31,7 @@ export class MoviesPage implements OnInit {
     await loading.present();
 
 
-    this.movieService.getPopularMoviesEs(this.currentPage).subscribe((res)=>{
+    this.movieEsService.getPopularMoviesEs(this.currentPage).subscribe((res)=>{
       loading.dismiss();
      // this.movies = [...this.movies,...res.results ]
       this.movies.push(...res.results);
@@ -52,7 +52,7 @@ export class MoviesPage implements OnInit {
   }
 
     ShowGenreMovies(){
-      this.movieService.getListGenreMoviesEs().subscribe(res =>{
+      this.movieEsService.getListGenreMoviesEs().subscribe(res =>{
         this.genres = res['genres'];
         console.log("liste genre",res['genres']);
     });
