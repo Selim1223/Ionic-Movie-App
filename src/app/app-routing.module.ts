@@ -32,6 +32,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/languages/english/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
   },
   {
+    path: 'animation-movies',
+    loadChildren: () => import('./pages/languages/english/genres/animation-movies/animation-movies.module').then( m => m.AnimationMoviesPageModule)
+  },
+  {
+    path: 'animation-movies/:id',
+    loadChildren: () => import('./pages/languages/english/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
     path: 'movies-fr',
     loadChildren: () => import('./pages/languages/french/movies-fr/movies-fr.module').then( m => m.MoviesPageModule)
   },

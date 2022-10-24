@@ -22,6 +22,7 @@ export const environment = {
   mystery: "9648",
   romance: "10749",
   SF: "878",
+  thriller: "53",
   TVMovie: "10770",
   war: "10752",
   western: "37",
