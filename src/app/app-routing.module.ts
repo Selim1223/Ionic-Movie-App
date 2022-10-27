@@ -169,6 +169,8 @@ const routes: Routes = [
     path: 'western-movies/:id',
     loadChildren: () => import('./pages/languages/english/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
   },
+
+    ///fr
   {
     path: 'movies-fr',
     loadChildren: () => import('./pages/languages/french/movies-fr/movies-fr.module').then( m => m.MoviesPageModule)
@@ -177,6 +179,160 @@ const routes: Routes = [
     path: 'movies-fr/:id',
     loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
   },
+  {
+    path: 'action-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/action-movies/action-movies.module').then( m => m.MoviesPageModule)
+  },
+  {
+    path: 'action-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'adventure-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/adventure-movies/adventure-movies.module').then( m => m.AdventureMoviesPageModule)
+  },
+  {
+    path: 'adventure-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'animation-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/animation-movies/animation-movies.module').then( m => m.AnimationMoviesPageModule)
+  },
+  {
+    path: 'animation-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'comedy-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/comedy-movies/comedy-movies.module').then( m => m.ComedyMoviesPageModule)
+  },
+  {
+    path: 'comedy-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'crime-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/crime-movies/crime-movies.module').then( m => m.CrimeMoviesPageModule)
+  },
+  {
+    path: 'crime-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'documentary-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/documentary-movies/documentary-movies.module').then( m => m.DocumentaryMoviesPageModule)
+  },
+  {
+    path: 'documentary-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'drama-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/drama-movies/drama-movies.module').then( m => m.DramaMoviesPageModule)
+  },
+  {
+    path: 'drama-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'family-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/family-movies/family-movies.module').then( m => m.FamilyMoviesPageModule)
+  },
+  {
+    path: 'family-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'fantasy-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/fantasy-movies/fantasy-movies.module').then( m => m.FantasyMoviesPageModule)
+  },
+  {
+    path: 'fantasy-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'history-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/history-movies/history-movies.module').then( m => m.HistoryMoviesPageModule)
+  },
+  {
+    path: 'history-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'horror-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/horror-movies/horror-movies.module').then( m => m.HorrorMoviesPageModule)
+  },
+  {
+    path: 'horror-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'music-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/music-movies/music-movies.module').then( m => m.MusicMoviesPageModule)
+  },
+  {
+    path: 'music-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'mystery-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/mystery-movies/mystery-movies.module').then( m => m.MysteryMoviesPageModule)
+  },
+  {
+    path: 'mystery-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'romance-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/romance-movies/romance-movies.module').then( m => m.RomanceMoviesPageModule)
+  },
+  {
+    path: 'romance-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'SF-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/SF-movies/SF-movies.module').then( m => m.SFMoviesPageModule)
+  },
+  {
+    path: 'SF-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'TV-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/TV-movies/TV-movies.module').then( m => m.TVMoviesPageModule)
+  },
+  {
+    path: 'TV-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'thriller-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/thriller-movies/thriller-movies.module').then( m => m.ThrillerMoviesPageModule)
+  },
+  {
+    path: 'thriller-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'war-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/war-movies/war-movies.module').then( m => m.WarMoviesPageModule)
+  },
+  {
+    path: 'war-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'western-movies-fr',
+    loadChildren: () => import('./pages/languages/french/genres/western-movies/western-movies.module').then( m => m.WesternMoviesPageModule)
+  },
+  {
+    path: 'western-movies-fr/:id',
+    loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
+  },
+
+      ///de
   {
     path: 'movies-de',
     loadChildren: () => import('./pages/languages/german/movies-de/movies-de.module').then( m => m.MoviesPageModule)
