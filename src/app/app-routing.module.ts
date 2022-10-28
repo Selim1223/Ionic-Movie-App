@@ -332,7 +332,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/languages/french/movie-details-fr/movie-details-fr.module').then( m => m.MovieDetailsPageModule)
   },
 
-      ///de
+///de
   {
     path: 'movies-de',
     loadChildren: () => import('./pages/languages/german/movies-de/movies-de.module').then( m => m.MoviesPageModule)
@@ -341,6 +341,160 @@ const routes: Routes = [
     path: 'movies-de/:id',
     loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
   },
+  {
+    path: 'action-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/action-movies/action-movies.module').then( m => m.MoviesPageModule)
+  },
+  {
+    path: 'action-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'adventure-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/adventure-movies/adventure-movies.module').then( m => m.AdventureMoviesPageModule)
+  },
+  {
+    path: 'adventure-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'animation-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/animation-movies/animation-movies.module').then( m => m.AnimationMoviesPageModule)
+  },
+  {
+    path: 'animation-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'comedy-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/comedy-movies/comedy-movies.module').then( m => m.ComedyMoviesPageModule)
+  },
+  {
+    path: 'comedy-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'crime-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/crime-movies/crime-movies.module').then( m => m.CrimeMoviesPageModule)
+  },
+  {
+    path: 'crime-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'documentary-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/documentary-movies/documentary-movies.module').then( m => m.DocumentaryMoviesPageModule)
+  },
+  {
+    path: 'documentary-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'drama-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/drama-movies/drama-movies.module').then( m => m.DramaMoviesPageModule)
+  },
+  {
+    path: 'drama-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'family-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/family-movies/family-movies.module').then( m => m.FamilyMoviesPageModule)
+  },
+  {
+    path: 'family-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'fantasy-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/fantasy-movies/fantasy-movies.module').then( m => m.FantasyMoviesPageModule)
+  },
+  {
+    path: 'fantasy-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'history-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/history-movies/history-movies.module').then( m => m.HistoryMoviesPageModule)
+  },
+  {
+    path: 'history-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'horror-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/horror-movies/horror-movies.module').then( m => m.HorrorMoviesPageModule)
+  },
+  {
+    path: 'horror-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'music-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/music-movies/music-movies.module').then( m => m.MusicMoviesPageModule)
+  },
+  {
+    path: 'music-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'mystery-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/mystery-movies/mystery-movies.module').then( m => m.MysteryMoviesPageModule)
+  },
+  {
+    path: 'mystery-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'romance-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/romance-movies/romance-movies.module').then( m => m.RomanceMoviesPageModule)
+  },
+  {
+    path: 'romance-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'SF-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/SF-movies/SF-movies.module').then( m => m.SFMoviesPageModule)
+  },
+  {
+    path: 'SF-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'TV-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/TV-movies/TV-movies.module').then( m => m.TVMoviesPageModule)
+  },
+  {
+    path: 'TV-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'thriller-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/thriller-movies/thriller-movies.module').then( m => m.ThrillerMoviesPageModule)
+  },
+  {
+    path: 'thriller-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'war-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/war-movies/war-movies.module').then( m => m.WarMoviesPageModule)
+  },
+  {
+    path: 'war-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'western-movies-de',
+    loadChildren: () => import('./pages/languages/german/genres/western-movies/western-movies.module').then( m => m.WesternMoviesPageModule)
+  },
+  {
+    path: 'western-movies-de/:id',
+    loadChildren: () => import('./pages/languages/german/movie-details-de/movie-details-de.module').then( m => m.MovieDetailsPageModule)
+  },
+
+ ///es
   {
     path: 'movies-es',
     loadChildren: () => import('./pages/languages/spanish/movies-es/movies-es.module').then( m => m.MoviesPageModule)

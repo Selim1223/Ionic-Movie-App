@@ -1,0 +1,83 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>Genres</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content color="dark" class="ion-padding" *ngIf="genres">
+    <ion-list>
+      <ion-button expand="block" color="danger" href = "movies-de" value="Homepage">Beliebte filme</ion-button><br>
+      <ion-button expand="block" color="danger" href = "action-movies-de" value="Action">{{genres[0]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "adventure-movies-de" value="Adventure">{{genres[1]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "animation-movies-de" value="Animation">{{genres[2]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "comedy-movies-de" value="Comedy">{{genres[3]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "crime-movies-de" value="Crime">{{genres[4]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "documentary-movies-de" value="Drama">{{genres[5]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "drama-movies-de" value="Drama">{{genres[6]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "family-movies-de" value="Family">{{genres[7]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "fantasy-movies-de" value="History">{{genres[8]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "horror-movies-de" value="Horror">{{genres[10]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "music-movies-de" value="Music">{{genres[11]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "mystery-movies-de" value="Mystery">{{genres[12]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "romance-movies-de" value="Romance">{{genres[13]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "SF-movies-de" value="SF">{{genres[14]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "TV-movies-de" value="TVMovie">{{genres[15]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "thriller-movies-de" value="Thriller">{{genres[16]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "war-movies-de" value="War">{{genres[17]['name']}}</ion-button><br>
+      <ion-button expand="block" color="danger" href = "western-movies-de" value="Western">{{genres[18]['name']}}</ion-button><br>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<div class="ion-page" id="main-content">
+  <ion-header line="none">
+    <ion-toolbar color="danger">
+      <ion-item color="danger"> 
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons> 
+        <ion-title class="home" slot="start">Geschichtsfilme</ion-title>
+          <ion-accordion-group slot="end">
+            <ion-accordion value="first">
+              <ion-item slot="header" color="danger">
+                <img src="https://flagcdn.com/de.svg" width="25" alt="Germany">
+              </ion-item>
+                <ion-item slot="content" color="danger" href = "/history-movies" value="English">
+                  <img src="https://flagcdn.com/gb-eng.svg" width="25" alt="England">
+                </ion-item> 
+                <ion-item slot="content" color="danger" href = "/history-movies-fr" value="French">
+                  <img src="https://flagcdn.com/fr.svg" width="25" alt="France">
+                </ion-item>       
+                <ion-item slot="content" color="danger" href = "/history-movies-es" value="Spanish">
+                  <img src="https://flagcdn.com/es.svg" width="25" alt="Spain">
+                </ion-item>
+            </ion-accordion>
+          </ion-accordion-group>
+      </ion-item>
+      <ion-searchbar line="none" placeholder="Search" color="danger" [(ngModel)]="searchTerm" show-clear-button="always" clear-icon="trash-bin" ></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content color="dark">
+    <ion-list color="dark">
+      <ion-item color="dark" button *ngFor="let movie of movies | filter:searchTerm" [routerLink] = "[movie.id]">
+        <ion-avatar slot="start">
+          <img [src]="imageBaseUrl +'/w92'+ movie.poster_path ">
+        </ion-avatar>
+        <ion-label>{{movie.title}}
+          <p>
+            {{movie.release_date |date:'y'}}
+          </p>
+        </ion-label>
+        <ion-badge color="tertiary" slot="end">{{movie.vote_average}}</ion-badge>
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite) = "loadMore($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </ion-content>
+</div>
