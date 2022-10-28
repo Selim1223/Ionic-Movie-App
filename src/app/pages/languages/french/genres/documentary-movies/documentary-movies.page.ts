@@ -24,7 +24,7 @@ export class DocumentaryMoviesPage implements OnInit {
  
    async loadMovies(event?){
      const loading = await this.loadingctrl.create({
-       message: 'Loading..',
+       message: 'Chargement en cours..',
        spinner: 'bubbles',
      });
  
